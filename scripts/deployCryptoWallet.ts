@@ -1,10 +1,12 @@
-import { toNano } from '@ton/core';
-import { CryptoWallet } from '../wrappers/CryptoWallet';
+import {contractAddress, toNano} from '@ton/core';
+import {Balances, CryptoWallet} from '../wrappers/CryptoWallet';
 import { NetworkProvider } from '@ton/blueprint';
 
 export async function run(provider: NetworkProvider) {
     const randomInt = BigInt(Math.floor(Math.random() * 1000000));
     const cryptoWallet = provider.open(await CryptoWallet.fromInit(randomInt));
+
+
 
 
 
@@ -21,7 +23,7 @@ export async function run(provider: NetworkProvider) {
 
     await provider.waitForDeploy(cryptoWallet.address);
 
-    console.log("id", cryptoWallet.getId)
+    console.log("id", cryptoWallet.getUsdtBalance)
 
     // run methods on `cryptoWallet`
 }

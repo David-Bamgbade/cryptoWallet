@@ -39,7 +39,7 @@ contract CryptoWallet with Deployable {
     }
 
     get fun usdtBalance(): Int {
-        return self.balance.usdtBalance
+        return self.balance.usdtBalance;
     }
 
     fun withdrawUsdt(usdtAmount: Int) {
